@@ -1,0 +1,8 @@
+*.txt
+*.exe
+.idea
+.vscode
+.env
+.env_templ
+volumes/
+*.log
