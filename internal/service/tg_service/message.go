@@ -387,7 +387,7 @@ func (srv *TgService) M_state(m models.Update) error {
 			if err != nil {
 				return fmt.Errorf("M_state api/v1/lichka Post err: %v", err)
 			}
-			url = fmt.Sprintf("%s/api/v1/link_ref", srv.Cfg.ServerUrl)
+			url = fmt.Sprintf("%s/api/v1/link_ref", srv.Cfg.ServerUrl) 
 			// ref_id := srv.Refki[user.Ref]
 			// if ref_id != "хуй" {
 			// 	ref_id = "929451330"
