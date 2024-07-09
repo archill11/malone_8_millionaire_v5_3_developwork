@@ -52,9 +52,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 
 	if prodolzit_id == "0" {
 		srv.SendAnimArticleHTMLV3("1.1", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 4) // https://t.me/c/1998413789/4
+		srv.CopyMessage(chatId, -1002230291670, 36) // https://t.me/c/2230291670/36
 		srv.SendAnimArticleHTMLV3("1.2", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 9)
+		srv.CopyMessage(chatId, -1002230291670, 37) // https://t.me/c/2230291670/37
 
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -66,9 +66,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "1" {
 		srv.SendAnimArticleHTMLV3("1.3", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 11)
+		srv.CopyMessage(chatId, -1002230291670, 38) // https://t.me/c/2230291670/38
 		srv.SendAnimArticleHTMLV3("1.4", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 13)
+		srv.CopyMessage(chatId, -1002230291670, 39) // https://t.me/c/2230291670/39
 
 
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
@@ -91,9 +91,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 		return nil
 	}
 	if prodolzit_id == "3" {
-		srv.CopyMessage(chatId, -1001998413789, 15)
+		srv.CopyMessage(chatId, -1002230291670, 40) // https://t.me/c/2230291670/40
 		srv.SendAnimArticleHTMLV3("1.6", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 17)
+		srv.CopyMessage(chatId, -1002230291670, 41) // https://t.me/c/2230291670/41
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -105,7 +105,7 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "4" {
 		srv.SendAnimArticleHTMLV3("1.7", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 19)
+		srv.CopyMessage(chatId, -1002230291670, 42) // https://t.me/c/2230291670/42
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -117,7 +117,7 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "5" {
 		srv.SendAnimArticleHTMLV3("1.8", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 21)
+		srv.CopyMessage(chatId, -1002230291670, 43) // https://t.me/c/2230291670/43
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -142,7 +142,7 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 		srv.SendAnimArticleHTMLV3("2.1", chatId, 2000)
 		srv.SendAnimArticleHTMLV3("2.2", chatId, 2000)
 		srv.SendAnimArticleHTMLV3("2.3", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 29)
+		srv.CopyMessage(chatId, -1002230291670, 44) // https://t.me/c/2230291670/44
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -154,7 +154,7 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "8" {
 		srv.SendAnimArticleHTMLV3("2.4", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 31)
+		srv.CopyMessage(chatId, -1002230291670, 45) // https://t.me/c/2230291670/45
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -166,9 +166,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "9" {
 		srv.SendAnimArticleHTMLV3("2.5", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 33)
+		srv.CopyMessage(chatId, -1002230291670, 46) // https://t.me/c/2230291670/46
 		srv.SendAnimArticleHTMLV3("2.6", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 35)
+		srv.CopyMessage(chatId, -1002230291670, 47) // https://t.me/c/2230291670/47
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -180,9 +180,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "10" {
 		srv.SendAnimArticleHTMLV3("2.7", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 37)
+		srv.CopyMessage(chatId, -1002230291670, 48) // https://t.me/c/2230291670/48
 		srv.SendAnimArticleHTMLV3("2.8", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 39)
+		srv.CopyMessage(chatId, -1002230291670, 49) // https://t.me/c/2230291670/49
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -194,9 +194,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "11" {
 		srv.SendAnimArticleHTMLV3("2.9", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 41)
+		srv.CopyMessage(chatId, -1002230291670, 50) // https://t.me/c/2230291670/50
 		srv.SendAnimArticleHTMLV3("2.10", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 43)
+		srv.CopyMessage(chatId, -1002230291670, 51) // https://t.me/c/2230291670/51
 		srv.SendAnimArticleHTMLV3("2.11", chatId, 2000)
 
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
@@ -209,7 +209,7 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "12" {
 		srv.SendAnimArticleHTMLV3("3.3", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 51)
+		srv.CopyMessage(chatId, -1002230291670, 52) // https://t.me/c/2230291670/52
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -221,9 +221,9 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "13" {
 		srv.SendAnimArticleHTMLV3("3.4", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 53)
+		srv.CopyMessage(chatId, -1002230291670, 53) // https://t.me/c/2230291670/53
 		srv.SendAnimArticleHTMLV3("3.5", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 55)
+		srv.CopyMessage(chatId, -1002230291670, 54) // https://t.me/c/2230291670/54
 		
 		text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
@@ -235,13 +235,13 @@ func (srv *TgService) Prodolzit(chatId int, prodolzit_id string) error {
 	}
 	if prodolzit_id == "14" {
 		srv.SendAnimArticleHTMLV3("3.6", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 57)
+		srv.CopyMessage(chatId, -1002230291670, 55) // https://t.me/c/2230291670/55
 		srv.SendAnimArticleHTMLV3("3.7", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 59)
+		srv.CopyMessage(chatId, -1002230291670, 56) // https://t.me/c/2230291670/56
 		srv.SendAnimArticleHTMLV3("3.8", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 65)
+		srv.CopyMessage(chatId, -1002230291670, 57) // https://t.me/c/2230291670/57
 		srv.SendAnimArticleHTMLV3("3.9", chatId, 2000)
-		srv.CopyMessage(chatId, -1001998413789, 66)
+		srv.CopyMessage(chatId, -1002230291670, 58) // https://t.me/c/2230291670/58
 		
 		// text := fmt.Sprintf("Вопрос %d из 15\n\nВыбери правильный ответ 👇", prodolzitIdInt+1)
 		// reply_markup := fmt.Sprintf(`{"inline_keyboard" : [
