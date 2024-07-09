@@ -308,7 +308,7 @@ func (srv *TgService) CQ_subscribe(m models.Update) error {
 
 	// textMess := fmt.Sprintf(
 	// 	"Переходи и регистрируйся по ссылке:\n\n%s\n\nДалее присылай сюда почту, на которую регистрировался 👇🏻",
-	// 	srv.ChInfoToLinkHTML("https://goopro.store/api/v1/redirect/1000153272?register=1", "ССЫЛКА"),
+	// 	srv.ChInfoToLinkHTML("", "ССЫЛКА"),
 	// )
 	// srv.SendMessageHTML(fromId, textMess)
 

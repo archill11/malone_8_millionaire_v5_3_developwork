@@ -388,10 +388,11 @@ func (srv *TgService) M_state(m models.Update) error {
 				return fmt.Errorf("M_state api/v1/lichka Post err: %v", err)
 			}
 			url = fmt.Sprintf("%s/api/v1/link_ref", srv.Cfg.ServerUrl)
-			ref_id := srv.Refki[user.Ref]
-			if ref_id != "хуй" {
-				ref_id = "1000153272"
-			}
+			// ref_id := srv.Refki[user.Ref]
+			// if ref_id != "хуй" {
+			// 	ref_id = "929451330"
+			// }
+			ref_id := "929451330"
 			jsonBody = []byte(fmt.Sprintf(`{"user_email":"%s", "ref_id":"%s"}`, msgTextEmail, ref_id))
 			bodyReader = bytes.NewReader(jsonBody)
 			_, err = http.Post(url, "application/json", bodyReader)
