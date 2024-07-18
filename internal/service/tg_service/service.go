@@ -264,6 +264,8 @@ func New(conf TgConfig, db *pg.Database, l *logger.Logger) (*TgService, error) {
 	go s.GetTgBotUpdates()
 
 	go s.ChangeSchemeEveryDay()
+	
+	go s.PushUtro()
 
 	// пуши неактивным юзерам
 	// go s.PushInactiveUsers()
@@ -568,7 +570,23 @@ func (srv *TgService) PushUtro() {
 	cron := gocron.NewScheduler(mskLoc)
 	cron.Every(2).Day().At("09:00").Do(func() {
 		allUsers, _ := srv.Db.GetAllUsers()
-
+		for _, user := range allUsers {
+			messText := "Вижу, ты еще не подписался на мой канал! Как и обещал, в канале много полезной информации и способ заработать 500.000₽ прямо сегодня 🔥 👇\n\nhttps://t.me/+GWPjPKkqp05hZmNi"
+			// reply_markup := `{"inline_keyboard" : [
+			// 	[{ "text": "Написать Марку", "callback_data": "" }, { "text": "Часто задаваемые вопросы", "callback_data": "frequently_questions_btn" }, ]
+			// ]}`
+			reply_markup := `{
+				"keyboard" : [[{ "text": "Написать Марку", "resize": true }, { "text": "Часто задаваемые вопросы", "resize": true }]],
+				"resize_keyboard": true
+			}`
+			_, err := srv.SendMessageWRM(user.Id, messText, reply_markup)
+			if err != nil {
+				srv.l.Error("PushUtro SendMessageWRM err: ", err)
+			}
+		}
+	})
+	cron.Every(2).Day().At("19:00").Do(func() {
+		allUsers, _ := srv.Db.GetAllUsers()
 		for _, user := range allUsers {
 			messText := "Вижу, ты еще не подписался на мой канал! Как и обещал, в канале много полезной информации и способ заработать 500.000₽ прямо сегодня 🔥 👇\n\nhttps://t.me/+GWPjPKkqp05hZmNi"
 			// reply_markup := `{"inline_keyboard" : [
