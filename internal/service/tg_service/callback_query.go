@@ -162,6 +162,16 @@ func (srv *TgService) HandleCallbackQuery(m models.Update) error {
 		return err
 	}
 
+	if cq.Data == "frequently_questions_btn" {
+		err := srv.CQ_frequently_questions_btn(m)
+		if err != nil {
+			srv.SendMessageAndDb(fromId, ERR_MSG)
+			srv.SendMessageAndDb(fromId, err.Error())
+		}
+		srv.Db.UpdateLatsActiontime(fromId)
+		return err
+	}
+
 	srv.Db.UpdateLatsActiontime(fromId)
 	return nil
 }
