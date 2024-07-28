@@ -18,4 +18,5 @@ type User struct {
 	FeedbackCnt     int                     `json:"feedback_cnt"`
 	FeedbackTime    string                  `json:"feedback_time"`
 	CreatedAt       string                  `json:"created_at"`
+	NotDelMessId    int                     `json:"not_del_mess_id"`
 }

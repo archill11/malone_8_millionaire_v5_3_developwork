@@ -35,6 +35,23 @@ func (srv *TgService) HandleCallbackQuery(m models.Update) error {
 		}
 	}()
 
+	go func() {
+		if cq.Data != "subscribe" && cq.Data != "priglasil_btn" && cq.Data != "otmetil_btn" && cq.Data != "zabrat_nagradu" && !strings.HasPrefix(cq.Data, "_win_q") && !strings.HasPrefix(cq.Data, "_lose_q") && !strings.HasPrefix(cq.Data, "show_q") && !strings.HasPrefix(cq.Data, "user_info") {
+			srv.l.Warn("syka")
+			time.Sleep(time.Second*4)
+			srv.EditMessageReplyMarkup(fromId, cq.Message.MessageId)
+			for i:=cq.Message.MessageId; i >= cq.Message.MessageId-25; i-- {
+				user, _ := srv.Db.GetUserById(fromId)
+				if i == user.NotDelMessId {
+					break
+				}
+				srv.DeleteMessage(fromId, i)
+				time.Sleep(time.Millisecond*300)
+			}
+			// srv.Db.UpdateLatsActiontime(fromId)
+		}
+	}()
+
 	// user, err := srv.Db.GetUserById(fromId)
 	// if err != nil {
 	// 	return fmt.Errorf("HandleCallbackQuery GetUserById err: %v", err)

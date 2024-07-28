@@ -241,3 +241,12 @@ func (s *Database) EditLichka(id int, lichka string) error {
 	}
 	return nil
 }
+
+func (s *Database) EditNotDelMessId(id int, not_del_mess_id int) error {
+	q := `UPDATE users SET not_del_mess_id = $1 WHERE id = $2`
+	_, err := s.Exec(q, not_del_mess_id, id)
+	if err != nil {
+		return fmt.Errorf("EditNotDelMessId Exec err: %v", err)
+	}
+	return nil
+}

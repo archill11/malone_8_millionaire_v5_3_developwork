@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS users (
     is_send_push     INT    DEFAULT 0,
     is_final         INT    DEFAULT 0,
 
+    not_del_mess_id  INT    DEFAULT 0,
+
     feedback_cnt     INT    DEFAULT 0,
     feedback_time    TEXT   DEFAULT '',
 
@@ -34,3 +36,6 @@ ALTER TABLE users
 
 ALTER TABLE users
   ADD COLUMN IF NOT EXISTS email TEXT DEFAULT '';
+
+ALTER TABLE users
+  ADD COLUMN IF NOT EXISTS not_del_mess_id INT DEFAULT 0;
