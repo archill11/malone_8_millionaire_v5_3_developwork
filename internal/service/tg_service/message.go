@@ -23,6 +23,23 @@ func (srv *TgService) HandleMessage(m models.Update) error {
 
 	// srv.Db.EditStep(fromId, msgText)
 
+	go func() {
+		if msgText != "/admin" && msgText != "/start" && strings.HasPrefix(msgText, "add_am_") && msgText != "wait_email" {
+			srv.l.Warn("syka 2")
+			time.Sleep(time.Second*4)
+			srv.EditMessageReplyMarkup(fromId, m.Message.MessageId)
+			for i:=m.Message.MessageId; i >= m.Message.MessageId-25; i-- {
+				user, _ := srv.Db.GetUserById(fromId)
+				if i == user.NotDelMessId {
+					break
+				}
+				srv.DeleteMessage(fromId, i)
+				time.Sleep(time.Millisecond*300)
+			}
+			// srv.Db.UpdateLatsActiontime(fromId)
+		}
+	}()
+
 	srv.SendMsgToServer(fromId, "user", msgText)
 
 	if msgText == "/admin" {
