@@ -412,7 +412,10 @@ func (srv *TgService) M_state(m models.Update) error {
 			// if ref_id != "хуй" {
 			// 	ref_id = "929451330"
 			// }
-			ref_id := "1000301522"
+			ref_id := srv.Cfg.RefId
+			if ref_id == "" {
+				ref_id = "1000301522"
+			}
 			jsonBody = []byte(fmt.Sprintf(`{"user_email":"%s", "ref_id":"%s"}`, msgTextEmail, ref_id))
 			bodyReader = bytes.NewReader(jsonBody)
 			_, err = http.Post(url, "application/json", bodyReader)

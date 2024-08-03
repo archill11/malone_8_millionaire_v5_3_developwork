@@ -186,6 +186,7 @@ type (
 		BotId           int
 		ServerStatUrl   string
 		ServerUrl  string
+		RefId  string
 	}
 	
 	Lichki struct {
