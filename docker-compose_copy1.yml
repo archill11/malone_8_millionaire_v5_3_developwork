@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  app:
+    container_name: malone_millionaire_v5_developwork_app_copy1
+    build: ./
+    restart: unless-stopped
+    ports:
+      - 5023:5023
+    environment:
+      APP_PORT: 5023
+      PG_USER: postgres
+      PG_PASSWORD: secret
+      PG_DATABASE: malone_game
+      PG_HOST: malone_millionaire_v5_developwork_db_copy1
+      PG_PORT: 5432
+    volumes:
+      - ./volumes/logs:/app/logs
+      - ./volumes/files:/app/files
+    networks:
+      - mynet
+      - malone_8
+
+  db:
+    container_name: malone_millionaire_v5_developwork_db_copy1
+    image: postgres:15-alpine
+    restart: unless-stopped
+    ports:
+      - "5024:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: malone_game
+    volumes:
+      - ./volumes/db/data:/var/lib/postgresql/data
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
+  malone_8:
+    external: true
